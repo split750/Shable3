@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= typeof title === "undefined" ? "Shable" : title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='/stylesheets/normalize.css' />
+    <link rel='stylesheet' href='/stylesheets/foundation.css' />
+    <link rel='stylesheet' href='/stylesheets/<%= typeof stylesheet === "undefined" ? "app" : stylesheet %>.css' />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+  <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        Parse.FacebookUtils.init({
+          appId      : '348462455320778',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+  <header class="border-bottom">
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row">
+          <div id="logo" class="large-2 columns">
+            <a href="/"><h1>Shable</h1></a>
+          </div>
+          <div id="main-menu" class="large-6 columns">
+            <nav>
+              <ul>
+                <li><a href='/planifier'>Planifier</a></li>
+                <li><a href='/recherche'>Rejoindre</a></li>
+                <li><a href="/profil">Profil</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div id="hearder-buttons" class="large-4 columns">
+          <ul class="right">
+            <li>
+              <a href="#connexion" id="login-button" class="btn btn-secondary btn-small" role="button" data-reveal-id="connexion-modal">Connexion</a>
+              <div id="connexion-modal" class="reveal-modal tiny" data-reveal>
+                <div class="ctn">
+                  <a href="#Connexion" class="button-facebook">
+                    <p><span class="icon-facebook"></span>Connexion avec Facebook</p>
+                  </a>
+                  <div class="separator">
+                    <h6>ou</h6>
+                    <hr>
+                  </div>
+                  <form>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <input type="text" placeholder="Entrez votre Email" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <input type="text" placeholder="Mot de passe" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <a href="#OuvrirUnCompte" id="validate-signup-button" name="SignUp_button" class="btn btn-small">Connexion</a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <a class="close-reveal-modal">&#215;</a>
+              </div>
+            </li>
+            <li>
+              <a href="#OuvrirUnCompte" id="signup-btn" name="SignUp_header" class="btn btn-small" data-reveal-id="inscription-modal">Ouvrir un compte</a>
+              <div id="inscription-modal" class="reveal-modal tiny" data-reveal>
+                <div class="ctn">
+                  <h3>Inscrivez vous</h3>
+                  <a href="#inscription-facebook" class="button-facebook">
+                    <p><span class="icon-facebook"></span>Inscription avec Facebook</p>
+                  </a>
+                  <div class="separator">
+                    <h6>ou</h6>
+                    <hr>
+                  </div>
+                  <p class="lead">Merci de compléter les champs suivants</p>
+                  <form>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <input type="text" placeholder="Prénom" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <input type="text" placeholder="Nom" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <input type="text" placeholder="Email" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <input type="text" placeholder="Mot de passe" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <input type="text" placeholder="Confirmer le mot de passe" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <a href="#OuvrirUnCompte" id="validate-signup-button" name="SignUp_button" class="btn btn-small">Inscription</a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <a class="close-reveal-modal">&#215;</a>
+              </div>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </header>

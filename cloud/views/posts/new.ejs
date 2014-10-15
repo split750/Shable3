@@ -1,0 +1,143 @@
+<% var stylesheet = "app" %>
+<% include ../_header %>
+
+<section id="planifier" class="planifier light-grey">
+<div class="row container">
+  <div class="large-12 columns">
+    <div class="row border-bottom">
+      <div class="large-8 columns large-centered text-center">
+        <h1>Publiez votre activité</h1>
+        <h2>Shable vous permet de partager vos activités avec vos amis et de rencontrer de nouvelles personnes</h2>
+      </div>
+    </div>
+    <div class="row border-bottom margin-top">
+      <div class="large-9 columns large-centered">
+        <form class='new_post' method='post' action='/posts' >
+          <div class="row first hide">
+            <div class="large-3 columns">
+              <h4>Type d'activité</h4>
+            </div>
+            <div class="large-9 columns">
+              <fieldset>
+              <div class="button-grouped">
+                <button class="button" data-name="Sport" data-slug="Sport">
+                  <p><span class="icon-soccer"></span>Sport</p>
+                </button>
+                <button class="button" data-name="Table" data-slug="Table">
+                  <p><span class="icon-restaurant2"></span>A table</p>
+                </button>
+                <button class="button" data-name="Festif" data-slug="Festif">
+                  <p><span class="icon-drink2"></span>Festif</p>
+                </button>
+                <button class="button" data-name="Culture" data-slug="Culture">
+                  <p><span class="icon-camera"></span>Culture</p>
+                </button>
+              </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <h4><span>Type d'activité</span></h4>
+            </div>
+            <div class="large-9 columns">
+              <select class="post_type" name="type" id='type-select'>
+                <option value="Sport">Sport</option>
+                <option value="A Table">A Table</option>
+                <option value="Festif">Festif</option>
+                <option value="Culture">Culture</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <h4><span>Choisissez l'activité</span></h4>
+            </div>
+            <div class="large-9 columns">
+              <select class="post_activity" name="activity" id='activity-select'>
+                <option value="Tennis">Tennis</option>
+                <option value="Natation">Natation</option>
+                <option value="Jogging">Jogging</option>
+                <option value="Foot">Foot</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <h4><span>Visibilité</span></h4>
+            </div>
+            <div class="large-9 columns">
+              <select class="post_visibility" name="visibility" id='visibility-select'>
+                <option value="Amis">Amis</option>
+                <option value="Privé">Privé</option>
+                <option value="Public">Public</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <h4><span>Nom de l'activité</span></h4>
+            </div>
+            <div class="large-9 columns">
+              <input type="text" class='post_title' name='title' placeholder="Nom" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <h4><span>Date</span></h4>
+            </div>
+            <div class="large-9 columns">
+              <input type="datetime" class='post_date' name='date' placeholder="Date" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <h4><span>Créneau</span></h4>
+            </div>
+            <div class="large-9 columns">
+              <select class="post_period" name="period" id='period-select'>
+                <option value="Morning">Matiné</option>
+                <option value="Lunch">Midi</option>
+                <option value="Afternoon">Après-midi</option>
+                <option value="Apero">Apéro</option>
+                <option value="Dining">Dîné</option>
+                <option value="Evening">Soirée</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <h4><span>Lieu</span></h4>
+            </div>
+            <div class="large-9 columns">
+              <input type="text" class='post_place' name='place' placeholder="Lieu" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns text-center">
+              <button class="btn btn-small" type="submit">Publier</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<script type='text/javascript'>
+var e = document.getElementById("type-select");
+var visibility = e.options[e.selectedIndex].value;
+
+var f = document.getElementById("activity-select");
+var type = e.options[e.selectedIndex].value;
+
+var g = document.getElementById("visibility-select");
+var type = e.options[e.selectedIndex].value;
+
+var h = document.getElementById("period-select");
+var type = e.options[e.selectedIndex].value;
+
+</script>
+
+<% include ../_footer %>

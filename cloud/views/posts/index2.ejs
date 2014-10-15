@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="large-12 columns text-center">
+    <h2>Les dernières activités</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <dl class="tabs" data-tab>
+      <dd class="active"><a href="#SportTab">Sport</a></dd>
+      <dd><a href="#RepasTab">Repas</a></dd>
+      <dd><a href="#CultureTab">Culture</a></dd>
+      <dd><a href="#FestifTab">Festif</a></dd>
+    </dl>
+    <div class="tabs-content">
+      <div class="content active" id="SportTab">
+        <% posts.forEach(function(post) { %>
+        <div class="post_link panel <%= post.get("formtheme") %>">
+          <h1><a href="<%= '/posts/' + post.id %>"><%= post.get("title") %></a></h1>
+          <h5><%= formatTime(post.createdAt) %></h5>
+          <p><%- snippet(post.get("type"), 210) %></p>
+          <p><%= post.get("place") %></p>
+        </div>
+        <% }) %>
+      </div>
+      <div class="content" id="RepasTab">
+        <% posts.forEach(function(post) { %>
+        <div class="post_link panel <%= post.get("formtheme") %>">
+          <h1><a href="<%= '/posts/' + post.id %>"><%= post.get("title") %></a></h1>
+          <h5><%= formatTime(post.createdAt) %></h5>
+          <p><%- snippet(post.get("type"), 210) %></p>
+          <p><%= post.get("place") %></p>
+        </div>
+        <% }) %>
+      </div>
+      <div class="content" id="CultureTab">
+        <% posts.forEach(function(post) { %>
+        <div class="post_link panel <%= post.get("formtheme") %>">
+          <h1><a href="<%= '/posts/' + post.id %>"><%= post.get("title") %></a></h1>
+          <h5><%= formatTime(post.createdAt) %></h5>
+          <p><%- snippet(post.get("type"), 210) %></p>
+          <p><%= post.get("place") %></p>
+        </div>
+        <% }) %>
+      </div>
+      <div class="content" id="FestifTab">
+        <% posts.forEach(function(post) { %>
+        <div class="post_link panel <%= post.get("formtheme") %>">
+          <h1><a href="<%= '/posts/' + post.id %>"><%= post.get("title") %></a></h1>
+          <h5><%= formatTime(post.createdAt) %></h5>
+          <p><%- snippet(post.get("type"), 210) %></p>
+          <p><%= post.get("place") %></p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</div>
